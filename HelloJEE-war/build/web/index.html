@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Hello JavaEE</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h3>Fibonacci Sequence</h3>
+        <p>
+            Simple Fibonacci sequence generator using Java's BigInteger and BigDecimal 
+            objects. Analytical solution is extremely slow compared to iterative due to very slow 
+            performance of taking BigDecimal to BigInteger power.
+        </p>
+        <div id="header">Solution Time 0 ms</div>
+        <div>
+            <textarea id="solution" cols="80" rows="30">1</textarea>
+        </div>
+        <div>
+            Fibonacci sequence number: 
+            <input type="text" id="n" value="2" maxlength="6">
+            <input type="button" value="Analytical (Slow)" onclick="solutionAnalytical();">
+            <input type="button" value="Iterative (Fast)"  onclick="solutionIterative();">
+        </div>        
+        <script>
+            function solutionAnalytical() {
+                $("#header").text("Calculating...");
+                var flickerAPI = "json/fib/a/" + $("#n").val();
+                $.getJSON(flickerAPI, {
+                    format: "json"
+                }).done(function(data) {
+                    $("#solution").val(data["result"]);
+                    $("#header").text("Solution Time " + data["calculation time"] + " ms");
+                });
+            }
+
+            function solutionIterative() {
+                $("#header").text("Calculating...");
+                var flickerAPI = "json/fib/i/" + $("#n").val();
+                $.getJSON(flickerAPI, {
+                    format: "json"
+                }).done(function(data) {
+                    $("#solution").val(data["result"]);
+                    $("#header").text("Solution Time " + data["calculation time"] + " ms");
+                });
+            }
+        </script>        
+    </body>
+</html>
