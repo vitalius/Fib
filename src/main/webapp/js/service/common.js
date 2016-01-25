@@ -13,15 +13,15 @@ commonService.factory('commonService', [ '$http', '$q',
     };
 
     service.matrix = function(n) {
-        return $http.get('api/matrix/' + n);
+        return $http.get('../fib/api/matrix/' + n);
     }
 
     service.recursive = function(n) {
-        return $http.get('api/recursive/' + n);
+        return $http.get('../fib/api/recursive/' + n);
     }
 
     service.iterative = function(n) {
-        return $http.get('api/iterative/' + n);
+        return $http.get('../fib/api/iterative/' + n);
     }
 
     return service;

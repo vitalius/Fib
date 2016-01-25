@@ -39,7 +39,7 @@ public class Common {
     @Produces(MediaType.TEXT_PLAIN)
     public static String fib_iterative_service(@PathParam("n") String n) {
         try {
-            int num = Integer.parseInt(n);
+            long num = Long.parseLong(n);
             if (num > 0 && num < 1000000)
                 return fib_iterative(new BigInteger(n)).toString();
         } catch (Exception e) {
@@ -66,7 +66,7 @@ public class Common {
     public static String fib_matrix_service(@PathParam("n") String n) {
         try {
             long num = Long.parseLong(n);
-            if (num > 0 && num < 10000000)
+            if (num > 0 && num < 1000000)
                 return fib_matrix(new BigInteger(n)).toString();
         } catch (Exception e) {
         }

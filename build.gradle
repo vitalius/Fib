@@ -20,5 +20,5 @@ task runCommonMain(type: JavaExec) {
 
 task deployToTomcat(type: Copy) {
     from war.archivePath
-    into "../../tomcat/apache-tomcat-9.0.0.M1/webapps"
+    into "../../../tomcat/apache-tomcat-9.0.0.M1/webapps"
 }
