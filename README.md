@@ -1,3 +1,3 @@
-# Trying out Java EE #
+# Testing Java web services #
 
-Testing out Java web services and web dev frameworks  with iterative as well as analytical Fibonacci number calculator.
+Testing Java JAX-RS, Gradle and AngularJS for web development

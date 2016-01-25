@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Fibonacci</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body ng-app="FibonacciApp" ng-controller="commonController">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci algorithm test</a>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>f(n) = f(n-2) + f(n-1)</h1>
+        <p>Comparing execution time of three fibonacci sequence algorithms implemented in Java</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Recursive, n < 40</h2>
+            <h2>f( <input size="2" ng-model="recursive.input" value="1"> )
+                <a class="btn btn-danger" href="#" role="button" ng-click="recursive.run()">Run &raquo;</a></h2>
+            <p ng-show="!recursive.loading">{{ recursive.time }} sec</p>
+            <p>
+                <span ng-show="recursive.loading" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                <textarea class="form-control" rows="5" ng-show="!recursive.loading">{{ recursive.result }}</textarea>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Iterative, n < 1000000</h2>
+            <h2>f( <input size="6" ng-model="iterative.input" value="1"> )
+                <a class="btn btn-warning" href="#" role="button" ng-click="iterative.run()">Run &raquo;</a></h2>
+            <p ng-show="!iterative.loading">{{ iterative.time }} sec</p>
+            <p>
+                <span ng-show="iterative.loading" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                <textarea class="form-control" rows="5" ng-show="!iterative.loading">{{ iterative.result }}</textarea>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Matrix, n < 10000000</h2>
+            <h2>f( <input size="10" ng-model="matrix.input" value="1"> )
+                <a class="btn btn-success" href="#" role="button" ng-click="matrix.run()">Run &raquo;</a></h2>
+                <p ng-show="!matrix.loading">{{ matrix.time }} sec</p>
+            <p>
+                <span ng-show="matrix.loading" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                <textarea class="form-control" rows="5" ng-show="!matrix.loading">{{ matrix.result }}</textarea>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/controller/common.js"></script>
+<script src="js/service/common.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
+
