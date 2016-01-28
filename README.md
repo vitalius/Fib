@@ -1,6 +1,6 @@
 # Testing Java web services #
 
-Testing Java JAX-RS, Gradle and AngularJS for web development
+Comparing execution time of three fibonacci sequence algorithms implemented in Java
 
 http://home.cloudmotion.com/fib/
 
